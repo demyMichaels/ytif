@@ -1,1 +1,1307 @@
-<p> Welcome to Young Titans Impact Foundation</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Titans Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            blue: '#3563AD',
+                            red: '#E94335',
+                            green: '#54B947',
+                            yellow: '#FBBC04',
+                        },
+                        secondary: {
+                            light: '#F8F9FA',
+                            dark: '#181818',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+
+        // Check for dark mode preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        /* Custom styles */
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .hero-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 75px;
+        }
+        .hero-wave .shape-fill {
+            fill: #FFFFFF;
+        }
+        .dark .hero-wave .shape-fill {
+            fill: #181818;
+        }
+        .program-card:hover .program-icon {
+            transform: scale(1.1);
+        }
+        .program-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white dark:bg-secondary-dark text-gray-800 dark:text-gray-200 min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-secondary-dark shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between">
+            <div class="flex items-center">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAsIDEwKSI+CiAgICA8IS0tIEJsdWUgUGVyc29uIC0tPgogICAgPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iOCIgZmlsbD0iIzM1NjNBRCIvPgogICAgPHBhdGggZD0iTTEwIDE4TDIwIDMwTDI1IDUwIiBzdHJva2U9IiMzNTYzQUQiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTUgMjBMMTAgMzAiIHN0cm9rZT0iIzM1NjNBRCIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgICA8IS0tIFJlZCBQZXJzb24gLS0+CiAgICA8Y2lyY2xlIGN4PSI3MCIgY3k9IjEwIiByPSI4IiBmaWxsPSIjRTk0MzM1Ii8+CiAgICA8cGF0aCBkPSJNNzAgMThMNjAgMzBMNTUgNTAiIHN0cm9rZT0iI0U5NDMzNSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik02NSAyMEw3MCAzMCIgc3Ryb2tlPSIjRTk0MzM1IiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICAgIDwhLS0gR3JlZW4gUGVyc29uIC0tPgogICAgPGNpcmNsZSBjeD0iMTAiIGN5PSI3MCIgcj0iOCIgZmlsbD0iIzU0Qjk0NyIvPgogICAgPHBhdGggZD0iTTEwIDYyTDIwIDUwTDI1IDUwIiBzdHJva2U9IiM1NEI5NDciIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTUgNjBMMTAgNTAiIHN0cm9rZT0iIzU0Qjk0NyIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgICA8IS0tIFllbGxvdyBQZXJzb24gLS0+CiAgICA8Y2lyY2xlIGN4PSI3MCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjRkJCQzA0Ii8+CiAgICA8cGF0aCBkPSJNNzAgNjJMNjAgNTBMNTUgNTAiIHN0cm9rZT0iI0ZCQkMwNCIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik02NSA2MEw3MCA1MCIgc3Ryb2tlPSIjRkJCQzA0IiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwvZz4KPC9zdmc+" 
+                     alt="Young Titans Foundation Logo" class="h-14 mr-3">
+                <span class="font-bold text-xl lg:text-2xl">Young Titans Foundation</span>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            
+            <div id="menu" class="hidden md:flex flex-col md:flex-row w-full md:w-auto mt-4 md:mt-0">
+                <a href="#home" class="nav-link py-2 md:px-4 border-b-2 border-transparent hover:border-primary-blue dark:hover:border-primary-blue">Home</a>
+                <a href="#about" class="nav-link py-2 md:px-4 border-b-2 border-transparent hover:border-primary-red dark:hover:border-primary-red">About Us</a>
+                <a href="#programs" class="nav-link py-2 md:px-4 border-b-2 border-transparent hover:border-primary-green dark:hover:border-primary-green">Programs</a>
+                <a href="#get-involved" class="nav-link py-2 md:px-4 border-b-2 border-transparent hover:border-primary-yellow dark:hover:border-primary-yellow">Get Involved</a>
+                <a href="#blog" class="nav-link py-2 md:px-4 border-b-2 border-transparent hover:border-primary-blue dark:hover:border-primary-blue">Blog</a>
+                <a href="#contact" class="nav-link py-2 md:px-4 border-b-2 border-transparent hover:border-primary-red dark:hover:border-primary-red">Contact</a>
+                <a href="#donate" class="nav-link mt-2 md:mt-0 md:ml-4 px-6 py-2 bg-primary-blue text-white rounded-full hover:bg-blue-700 transition duration-300">Donate</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Home Section -->
+        <section id="home" class="relative py-20 md:py-32 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        <span class="text-primary-blue">Empowering</span> the Next Generation of Leaders
+                    </h1>
+                    <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">
+                        We provide vulnerable children with educational opportunities, mentorship, and life skills to help them reach their full potential.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#donate" class="btn px-8 py-3 bg-primary-blue hover:bg-blue-700 text-white rounded-full text-center font-medium transition duration-300">
+                            Make a Donation
+                        </a>
+                        <a href="#get-involved" class="btn px-8 py-3 bg-white dark:bg-gray-800 border-2 border-primary-yellow hover:bg-primary-yellow hover:text-white dark:hover:text-white text-gray-800 dark:text-gray-200 rounded-full text-center font-medium transition duration-300">
+                            Volunteer With Us
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-fadeIn">
+                    <img src="https://images.unsplash.com/photo-1588075592446-265bad1041ba?w=800&auto=format&fit=crop" 
+                         alt="Children learning together" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+            
+            <div class="hero-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Mission Stats Section -->
+        <section class="py-12 md:py-20 bg-white dark:bg-secondary-dark">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <div class="text-center p-6 rounded-lg">
+                        <div class="text-primary-blue text-4xl md:text-5xl font-bold mb-2">5,000+</div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Children Supported</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg">
+                        <div class="text-primary-red text-4xl md:text-5xl font-bold mb-2">12</div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Partner Schools</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg">
+                        <div class="text-primary-green text-4xl md:text-5xl font-bold mb-2">24</div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Active Programs</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg">
+                        <div class="text-primary-yellow text-4xl md:text-5xl font-bold mb-2">500+</div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Volunteer Hours Monthly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary-blue font-medium">Our Story</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">About Young Titans Foundation</h2>
+                    <div class="w-20 h-1 bg-primary-blue mx-auto mb-6"></div>
+                    <p class="text-gray-700 dark:text-gray-300">Founded with a vision to transform the lives of vulnerable children, Young Titans Foundation works to provide educational support, mentorship, and opportunities for children to develop their talents and skills.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                        <img src="https://images.unsplash.com/photo-1537655780520-1e392ead81f2?w=800&auto=format&fit=crop" 
+                             alt="Children in a classroom" class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-red">Our Mission</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            To empower vulnerable children through quality education, mentorship, and creative development programs that unlock their potential and prepare them to become confident, capable leaders.
+                        </p>
+                        
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-green">Our Vision</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            A world where every child, regardless of background or circumstance, has the opportunity to develop their talents, pursue their dreams, and contribute meaningfully to society.
+                        </p>
+                        
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-yellow">Our Values</h3>
+                        <ul class="grid grid-cols-2 gap-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Compassion</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-red mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Excellence</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-green mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Inclusivity</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-yellow mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Innovation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-blue mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Integrity</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary-red mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Collaboration</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Section -->
+                <div class="mt-20">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="text-3xl font-bold mb-4">Our Leadership Team</h2>
+                        <p class="text-gray-700 dark:text-gray-300">Meet the dedicated team behind Young Titans Foundation, committed to creating positive change in the lives of children.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Team Member 1 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop" 
+                                 alt="Team Member" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-lg mb-1">Michael Johnson</h3>
+                                <p class="text-primary-blue text-sm mb-4">Executive Director</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Over 15 years of experience in non-profit management and youth development programs.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Team Member 2 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop" 
+                                 alt="Team Member" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-lg mb-1">Sarah Williams</h3>
+                                <p class="text-primary-red text-sm mb-4">Education Director</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Former school principal with expertise in developing inclusive educational programs.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Team Member 3 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop" 
+                                 alt="Team Member" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-lg mb-1">David Chen</h3>
+                                <p class="text-primary-green text-sm mb-4">Program Manager</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Specialized in developing creative and technological learning programs for children.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Team Member 4 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:-translate-y-2">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop" 
+                                 alt="Team Member" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-lg mb-1">Rebecca Osei</h3>
+                                <p class="text-primary-yellow text-sm mb-4">Community Outreach</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">Works with communities and partners to expand our impact and build sustainable relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="py-16 md:py-24 bg-white dark:bg-secondary-dark">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary-green font-medium">What We Do</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Our Programs</h2>
+                    <div class="w-20 h-1 bg-primary-green mx-auto mb-6"></div>
+                    <p class="text-gray-700 dark:text-gray-300">We offer a variety of programs designed to nurture the intellectual, creative, and social development of children.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Program 1 -->
+                    <div class="program-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <div class="h-48 bg-primary-blue bg-opacity-10 dark:bg-opacity-20 flex items-center justify-center">
+                            <div class="program-icon text-primary-blue text-5xl">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-3 text-primary-blue">Reading Program</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                Our literacy program helps children develop a love for reading through engaging activities and personalized support.
+                            </p>
+                            <a href="#" class="text-primary-blue font-medium hover:underline flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="program-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <div class="h-48 bg-primary-red bg-opacity-10 dark:bg-opacity-20 flex items-center justify-center">
+                            <div class="program-icon text-primary-red text-5xl">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-3 text-primary-red">Coding & Tech</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                Introducing children to the world of technology through interactive coding classes and digital literacy.
+                            </p>
+                            <a href="#" class="text-primary-red font-medium hover:underline flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="program-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <div class="h-48 bg-primary-green bg-opacity-10 dark:bg-opacity-20 flex items-center justify-center">
+                            <div class="program-icon text-primary-green text-5xl">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-3 text-primary-green">Arts & Expression</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                Creative arts programs that encourage self-expression, imagination, and cultural appreciation.
+                            </p>
+                            <a href="#" class="text-primary-green font-medium hover:underline flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 4 -->
+                    <div class="program-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <div class="h-48 bg-primary-yellow bg-opacity-10 dark:bg-opacity-20 flex items-center justify-center">
+                            <div class="program-icon text-primary-yellow text-5xl">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-3 text-primary-yellow">Mentorship</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                One-on-one mentoring that provides guidance, support, and positive role models for children.
+                            </p>
+                            <a href="#" class="text-primary-yellow font-medium hover:underline flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Impact Story -->
+                <div class="mt-20 bg-gradient-to-r from-primary-blue to-blue-700 dark:from-blue-900 dark:to-blue-800 rounded-xl overflow-hidden shadow-xl">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&auto=format&fit=crop" 
+                                 alt="Smiling child" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold mb-4">Our Impact</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">
+                                "Before joining Young Titans Foundation's reading program, I struggled with my studies. Now I'm top of my class and dream of becoming a writer. The mentors believed in me even when I didn't believe in myself."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="bg-white rounded-full h-12 w-12 flex items-center justify-center mr-4">
+                                    <span class="text-primary-blue font-bold text-xl">JO</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">John Okafor</h4>
+                                    <p class="text-blue-200 text-sm">Program Participant, Age 13</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Involved Section -->
+        <section id="get-involved" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary-yellow font-medium">Join Our Cause</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Get Involved</h2>
+                    <div class="w-20 h-1 bg-primary-yellow mx-auto mb-6"></div>
+                    <p class="text-gray-700 dark:text-gray-300">There are many ways to support our mission and help us create a positive impact in the lives of children.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <!-- Volunteer -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <div class="w-16 h-16 bg-primary-yellow bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-hands-helping text-primary-yellow text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Volunteer With Us</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-6">
+                                Share your skills and time to make a difference in the lives of children. We have opportunities for both in-person and virtual volunteering.
+                            </p>
+                            <ul class="mb-8 space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-yellow mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">Mentorship programs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-yellow mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">Reading and literacy support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-yellow mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">Creative arts facilitation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-yellow mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">Event assistance and organization</span>
+                                </li>
+                            </ul>
+                            <button class="volunteer-btn px-6 py-3 bg-primary-yellow text-white rounded-full hover:bg-yellow-500 transition duration-300">
+                                Apply to Volunteer
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Partnerships -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <div class="w-16 h-16 bg-primary-blue bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-handshake text-primary-blue text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Partner With Us</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-6">
+                                We collaborate with schools, organizations, and businesses to expand our reach and enhance the quality of our programs.
+                            </p>
+                            <ul class="mb-8 space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-blue mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">Corporate social responsibility initiatives</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-blue mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">Program sponsorships</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-blue mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">In-kind donations and services</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-blue mt-1 mr-3"></i>
+                                    <span class="text-gray-700 dark:text-gray-300">School and community partnerships</span>
+                                </li>
+                            </ul>
+                            <button class="partner-btn px-6 py-3 bg-primary-blue text-white rounded-full hover:bg-blue-700 transition duration-300">
+                                Become a Partner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Volunteer Form -->
+                <div id="volunteer-form" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-2xl mx-auto hidden">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Volunteer Application</h3>
+                    <form id="volunteerApplicationForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-yellow dark:bg-gray-700" required>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-yellow dark:bg-gray-700" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address*</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-yellow dark:bg-gray-700" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-yellow dark:bg-gray-700">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Areas of Interest*</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="reading" name="interests" value="reading" class="mr-2 h-5 w-5 text-primary-yellow">
+                                    <label for="reading" class="text-gray-700 dark:text-gray-300">Reading Program</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="coding" name="interests" value="coding" class="mr-2 h-5 w-5 text-primary-yellow">
+                                    <label for="coding" class="text-gray-700 dark:text-gray-300">Coding & Tech</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="arts" name="interests" value="arts" class="mr-2 h-5 w-5 text-primary-yellow">
+                                    <label for="arts" class="text-gray-700 dark:text-gray-300">Arts & Expression</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="mentorship" name="interests" value="mentorship" class="mr-2 h-5 w-5 text-primary-yellow">
+                                    <label for="mentorship" class="text-gray-700 dark:text-gray-300">Mentorship</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="events" name="interests" value="events" class="mr-2 h-5 w-5 text-primary-yellow">
+                                    <label for="events" class="text-gray-700 dark:text-gray-300">Events</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="other" name="interests" value="other" class="mr-2 h-5 w-5 text-primary-yellow">
+                                    <label for="other" class="text-gray-700 dark:text-gray-300">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Why do you want to volunteer with us?</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-yellow dark:bg-gray-700"></textarea>
+                        </div>
+                        
+                        <div class="flex justify-end gap-4">
+                            <button type="button" id="cancelVolunteerForm" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-6 py-3 bg-primary-yellow text-white rounded-full hover:bg-yellow-500 transition duration-300">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Partner Form -->
+                <div id="partner-form" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-2xl mx-auto hidden">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Partnership Inquiry</h3>
+                    <form id="partnershipForm">
+                        <div class="mb-6">
+                            <label for="orgName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Organization Name*</label>
+                            <input type="text" id="orgName" name="orgName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="contactName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Contact Person*</label>
+                                <input type="text" id="contactName" name="contactName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                            </div>
+                            <div>
+                                <label for="contactPosition" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Position/Title</label>
+                                <input type="text" id="contactPosition" name="contactPosition" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="partnerEmail" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address*</label>
+                                <input type="email" id="partnerEmail" name="partnerEmail" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                            </div>
+                            <div>
+                                <label for="partnerPhone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number*</label>
+                                <input type="tel" id="partnerPhone" name="partnerPhone" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Partnership Interest*</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="sponsorship" name="partnershipType" value="sponsorship" class="mr-2 h-5 w-5 text-primary-blue">
+                                    <label for="sponsorship" class="text-gray-700 dark:text-gray-300">Program Sponsorship</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="inkind" name="partnershipType" value="inkind" class="mr-2 h-5 w-5 text-primary-blue">
+                                    <label for="inkind" class="text-gray-700 dark:text-gray-300">In-kind Donation</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="csr" name="partnershipType" value="csr" class="mr-2 h-5 w-5 text-primary-blue">
+                                    <label for="csr" class="text-gray-700 dark:text-gray-300">CSR Initiative</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="community" name="partnershipType" value="community" class="mr-2 h-5 w-5 text-primary-blue">
+                                    <label for="community" class="text-gray-700 dark:text-gray-300">Community Program</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="partnerMessage" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Tell us about your organization and how you'd like to partner with us</label>
+                            <textarea id="partnerMessage" name="partnerMessage" rows="4" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700"></textarea>
+                        </div>
+                        
+                        <div class="flex justify-end gap-4">
+                            <button type="button" id="cancelPartnerForm" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-6 py-3 bg-primary-blue text-white rounded-full hover:bg-blue-700 transition duration-300">
+                                Submit Inquiry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 md:py-24 bg-white dark:bg-secondary-dark">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary-blue font-medium">Stories & Updates</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Our Blog</h2>
+                    <div class="w-20 h-1 bg-primary-blue mx-auto mb-6"></div>
+                    <p class="text-gray-700 dark:text-gray-300">Stay updated with our latest news, impact stories, and events.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1544476915-ed1370594142?w=800&auto=format&fit=crop" 
+                             alt="Children in a classroom" class="w-full h-56 object-cover object-center">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm text-primary-blue font-medium">Education</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">May 15, 2023</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-3">New Reading Program Launches at 5 Partner Schools</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                                Our latest literacy initiative is reaching 500 more children with personalized reading support and materials.
+                            </p>
+                            <a href="#" class="text-primary-blue font-medium hover:underline flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&auto=format&fit=crop" 
+                             alt="Children using computers" class="w-full h-56 object-cover object-center">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm text-primary-red font-medium">Technology</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">April 28, 2023</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-3">Tech Company Donates 50 Laptops to Support Digital Learning</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                                A generous donation from TechCorp is helping us expand our coding program to reach more schools.
+                            </p>
+                            <a href="#" class="text-primary-red font-medium hover:underline flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1617761141732-d481912af1a9?w=800&auto=format&fit=crop" 
+                             alt="Children painting" class="w-full h-56 object-cover object-center">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm text-primary-green font-medium">Arts</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">April 12, 2023</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-3">Annual Art Exhibition Showcases Children's Creativity</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                                Over 100 artworks created by children in our programs were displayed at the city gallery, attracting hundreds of visitors.
+                            </p>
+                            <a href="#" class="text-primary-green font-medium hover:underline flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block px-8 py-3 bg-white dark:bg-gray-800 border-2 border-primary-blue text-primary-blue rounded-full hover:bg-primary-blue hover:text-white transition duration-300">
+                        View All Posts
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate Section -->
+        <section id="donate" class="py-16 md:py-24 bg-gradient-to-br from-primary-blue to-indigo-700 dark:from-blue-900 dark:to-indigo-900 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-blue-200 font-medium">Support Our Mission</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Make a Donation</h2>
+                    <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+                    <p class="text-blue-100">Your generous contribution helps us provide quality education, mentorship, and creative opportunities for children in need.</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 bg-blue-50 dark:bg-gray-700 p-8 md:p-10">
+                            <h3 class="text-primary-blue dark:text-blue-300 font-bold text-2xl mb-6">Your Impact</h3>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-book text-primary-blue dark:text-blue-300 mr-3"></i>
+                                    <span class="text-gray-800 dark:text-gray-200 font-medium">$25</span>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm pl-8">
+                                    Provides educational materials for one child for a month
+                                </p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-laptop text-primary-red dark:text-red-300 mr-3"></i>
+                                    <span class="text-gray-800 dark:text-gray-200 font-medium">$50</span>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm pl-8">
+                                    Sponsors a child in our coding program for two weeks
+                                </p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-paint-brush text-primary-green dark:text-green-300 mr-3"></i>
+                                    <span class="text-gray-800 dark:text-gray-200 font-medium">$100</span>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm pl-8">
+                                    Provides art supplies for an entire class for a month
+                                </p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-users text-primary-yellow dark:text-yellow-300 mr-3"></i>
+                                    <span class="text-gray-800 dark:text-gray-200 font-medium">$250</span>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm pl-8">
+                                    Funds a field trip for 25 children
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-school text-primary-blue dark:text-blue-300 mr-3"></i>
+                                    <span class="text-gray-800 dark:text-gray-200 font-medium">$500</span>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm pl-8">
+                                    Sponsors a full program at one school for a month
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-3/5 p-8 md:p-10">
+                            <h3 class="text-gray-800 dark:text-gray-200 font-bold text-2xl mb-6">Donation Details</h3>
+                            
+                            <form id="donationForm">
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 dark:text-gray-300 font-medium mb-3">Select Amount</label>
+                                    <div class="grid grid-cols-3 gap-3 mb-4">
+                                        <button type="button" class="donation-amount px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-200 font-medium hover:border-primary-blue hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:border-primary-blue focus:bg-blue-50 dark:focus:bg-gray-700" data-amount="25">$25</button>
+                                        <button type="button" class="donation-amount px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-200 font-medium hover:border-primary-blue hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:border-primary-blue focus:bg-blue-50 dark:focus:bg-gray-700" data-amount="50">$50</button>
+                                        <button type="button" class="donation-amount px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-200 font-medium hover:border-primary-blue hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:border-primary-blue focus:bg-blue-50 dark:focus:bg-gray-700" data-amount="100">$100</button>
+                                        <button type="button" class="donation-amount px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-200 font-medium hover:border-primary-blue hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:border-primary-blue focus:bg-blue-50 dark:focus:bg-gray-700" data-amount="250">$250</button>
+                                        <button type="button" class="donation-amount px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-200 font-medium hover:border-primary-blue hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:border-primary-blue focus:bg-blue-50 dark:focus:bg-gray-700" data-amount="500">$500</button>
+                                        <button type="button" class="other-amount px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-gray-200 font-medium hover:border-primary-blue hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:border-primary-blue focus:bg-blue-50 dark:focus:bg-gray-700">Other</button>
+                                    </div>
+                                    <div id="custom-amount" class="hidden">
+                                        <label for="otherAmount" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Enter Amount ($)</label>
+                                        <input type="number" id="otherAmount" min="1" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 dark:text-gray-300 font-medium mb-3">Donation Type</label>
+                                    <div class="flex gap-4">
+                                        <label class="flex items-center">
+                                            <input type="radio" name="donationType" value="one-time" class="mr-2 h-5 w-5 text-primary-blue" checked>
+                                            <span class="text-gray-800 dark:text-gray-200">One-time</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="donationType" value="monthly" class="mr-2 h-5 w-5 text-primary-blue">
+                                            <span class="text-gray-800 dark:text-gray-200">Monthly</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="donorFirstName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">First Name*</label>
+                                        <input type="text" id="donorFirstName" name="donorFirstName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                                    </div>
+                                    <div>
+                                        <label for="donorLastName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Last Name*</label>
+                                        <input type="text" id="donorLastName" name="donorLastName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="donorEmail" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address*</label>
+                                    <input type="email" id="donorEmail" name="donorEmail" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-blue dark:bg-gray-700" required>
+                                </div>
+                                
+                                <button type="submit" class="w-full px-6 py-3 bg-primary-blue text-white rounded-full hover:bg-blue-700 transition duration-300">
+                                    Proceed to Payment
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary-red font-medium">Get in Touch</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Contact Us</h2>
+                    <div class="w-20 h-1 bg-primary-red mx-auto mb-6"></div>
+                    <p class="text-gray-700 dark:text-gray-300">Have questions or want to learn more about our programs? We'd love to hear from you.</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/3">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-primary-red bg-opacity-10 rounded-full p-3 mr-4">
+                                        <i class="fas fa-map-marker-alt text-primary-red"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-1">Our Location</h4>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            123 Education Way<br>
+                                            Community Center, Suite 300<br>
+                                            New York, NY 10001
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-primary-blue bg-opacity-10 rounded-full p-3 mr-4">
+                                        <i class="fas fa-envelope text-primary-blue"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-1">Email Us</h4>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            info@youngtitans.org<br>
+                                            donations@youngtitans.org
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-primary-green bg-opacity-10 rounded-full p-3 mr-4">
+                                        <i class="fas fa-phone-alt text-primary-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-1">Call Us</h4>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            Main Office: (212) 555-7890<br>
+                                            Volunteer Hotline: (212) 555-1234
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-primary-yellow bg-opacity-10 rounded-full p-3 mr-4">
+                                        <i class="fas fa-clock text-primary-yellow"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-1">Office Hours</h4>
+                                        <p class="text-gray-700 dark:text-gray-300">
+                                            Monday - Friday: 9:00 AM - 5:00 PM<br>
+                                            Saturday: 10:00 AM - 2:00 PM<br>
+                                            Sunday: Closed
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-3">Follow Us</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="bg-blue-100 dark:bg-blue-900 text-primary-blue dark:text-blue-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-200 dark:hover:bg-blue-800 transition duration-300">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="bg-blue-100 dark:bg-blue-900 text-primary-blue dark:text-blue-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-200 dark:hover:bg-blue-800 transition duration-300">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="bg-pink-100 dark:bg-pink-900 text-pink-500 dark:text-pink-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-200 dark:hover:bg-pink-800 transition duration-300">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="bg-red-100 dark:bg-red-900 text-red-500 dark:text-red-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-200 dark:hover:bg-red-800 transition duration-300">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                    <a href="#" class="bg-blue-100 dark:bg-blue-900 text-blue-500 dark:text-blue-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-200 dark:hover:bg-blue-800 transition duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-2/3">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                            <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                            
+                            <form id="contactForm">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="contactFirstName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">First Name*</label>
+                                        <input type="text" id="contactFirstName" name="contactFirstName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-red dark:bg-gray-700" required>
+                                    </div>
+                                    <div>
+                                        <label for="contactLastName" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Last Name*</label>
+                                        <input type="text" id="contactLastName" name="contactLastName" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-red dark:bg-gray-700" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="contactEmail" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email Address*</label>
+                                        <input type="email" id="contactEmail" name="contactEmail" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-red dark:bg-gray-700" required>
+                                    </div>
+                                    <div>
+                                        <label for="contactPhone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number</label>
+                                        <input type="tel" id="contactPhone" name="contactPhone" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-red dark:bg-gray-700">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="contactSubject" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Subject*</label>
+                                    <input type="text" id="contactSubject" name="contactSubject" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-red dark:bg-gray-700" required>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label for="contactMessage" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message*</label>
+                                    <textarea id="contactMessage" name="contactMessage" rows="5" class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-red dark:bg-gray-700" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="px-8 py-3 bg-primary-red text-white rounded-full hover:bg-red-600 transition duration-300">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Notification Popup -->
+        <div id="notification" class="fixed bottom-4 right-4 max-w-sm bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 transform translate-y-20 opacity-0 transition-all duration-500 z-50 hidden">
+            <div class="flex items-center">
+                <div id="notification-icon" class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mr-4"></div>
+                <div>
+                    <h4 id="notification-title" class="font-medium text-gray-800 dark:text-gray-200"></h4>
+                    <p id="notification-message" class="text-sm text-gray-700 dark:text-gray-300"></p>
+                </div>
+                <button id="close-notification" class="ml-auto text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAsIDEwKSI+CiAgICA8IS0tIEJsdWUgUGVyc29uIC0tPgogICAgPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iOCIgZmlsbD0iIzM1NjNBRCIvPgogICAgPHBhdGggZD0iTTEwIDE4TDIwIDMwTDI1IDUwIiBzdHJva2U9IiMzNTYzQUQiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTUgMjBMMTAgMzAiIHN0cm9rZT0iIzM1NjNBRCIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgICA8IS0tIFJlZCBQZXJzb24gLS0+CiAgICA8Y2lyY2xlIGN4PSI3MCIgY3k9IjEwIiByPSI4IiBmaWxsPSIjRTk0MzM1Ii8+CiAgICA8cGF0aCBkPSJNNzAgMThMNjAgMzBMNTUgNTAiIHN0cm9rZT0iI0U5NDMzNSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik02NSAyMEw3MCAzMCIgc3Ryb2tlPSIjRTk0MzM1IiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICAgIDwhLS0gR3JlZW4gUGVyc29uIC0tPgogICAgPGNpcmNsZSBjeD0iMTAiIGN5PSI3MCIgcj0iOCIgZmlsbD0iIzU0Qjk0NyIvPgogICAgPHBhdGggZD0iTTEwIDYyTDIwIDUwTDI1IDUwIiBzdHJva2U9IiM1NEI5NDciIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8cGF0aCBkPSJNMTUgNjBMMTAgNTAiIHN0cm9rZT0iIzU0Qjk0NyIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgICA8IS0tIFllbGxvdyBQZXJzb24gLS0+CiAgICA8Y2lyY2xlIGN4PSI3MCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjRkJCQzA0Ii8+CiAgICA8cGF0aCBkPSJNNzAgNjJMNjAgNTBMNTUgNTAiIHN0cm9rZT0iI0ZCQkMwNCIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxwYXRoIGQ9Ik02NSA2MEw3MCA1MCIgc3Ryb2tlPSIjRkJCQzA0IiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwvZz4KPC9zdmc+" 
+                             alt="Young Titans Foundation Logo" class="h-12 mr-3">
+                        <span class="font-bold text-xl">Young Titans Foundation</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Empowering the next generation of leaders through education, mentorship, and creative development.
+                    </p>
+                    <p class="text-gray-400">
+                        501(c)(3) Non-Profit Organization<br>
+                        Tax ID: 12-3456789
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition duration-300">Our Programs</a></li>
+                        <li><a href="#get-involved" class="text-gray-400 hover:text-white transition duration-300">Get Involved</a></li>
+                        <li><a href="#donate" class="text-gray-400 hover:text-white transition duration-300">Donate</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Annual Reports</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Media Kit</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter to receive updates on our programs, events, and success stories.
+                    </p>
+                    <form id="newsletterForm" class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="px-4 py-2 text-base rounded-l-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary-blue w-full dark:bg-gray-700">
+                            <button type="submit" class="bg-primary-blue hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500">
+                <p>&copy; 2023 Young Titans Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (!menu.classList.contains('hidden') && window.innerWidth < 768) {
+                        menu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form visibility toggles
+        const volunteerBtn = document.querySelector('.volunteer-btn');
+        const partnerBtn = document.querySelector('.partner-btn');
+        const volunteerForm = document.getElementById('volunteer-form');
+        const partnerForm = document.getElementById('partner-form');
+        const cancelVolunteerForm = document.getElementById('cancelVolunteerForm');
+        const cancelPartnerForm = document.getElementById('cancelPartnerForm');
+        
+        volunteerBtn.addEventListener('click', () => {
+            partnerForm.classList.add('hidden');
+            volunteerForm.classList.remove('hidden');
+            volunteerForm.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        partnerBtn.addEventListener('click', () => {
+            volunteerForm.classList.add('hidden');
+            partnerForm.classList.remove('hidden');
+            partnerForm.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        cancelVolunteerForm.addEventListener('click', () => {
+            volunteerForm.classList.add('hidden');
+            document.getElementById('get-involved').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        cancelPartnerForm.addEventListener('click', () => {
+            partnerForm.classList.add('hidden');
+            document.getElementById('get-involved').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Donation amount selection
+        const donationAmounts = document.querySelectorAll('.donation-amount');
+        const otherAmountBtn = document.querySelector('.other-amount');
+        const customAmountDiv = document.getElementById('custom-amount');
+        const otherAmountInput = document.getElementById('otherAmount');
+        let selectedAmount = null;
+        
+        donationAmounts.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset all buttons
+                donationAmounts.forEach(b => {
+                    b.classList.remove('border-primary-blue', 'bg-blue-50', 'dark:bg-gray-700');
+                    b.classList.add('border-gray-300', 'dark:border-gray-600');
+                });
+                
+                // Highlight selected button
+                btn.classList.remove('border-gray-300', 'dark:border-gray-600');
+                btn.classList.add('border-primary-blue', 'bg-blue-50', 'dark:bg-gray-700');
+                
+                // Hide custom amount field
+                customAmountDiv.classList.add('hidden');
+                
+                // Set selected amount
+                selectedAmount = btn.dataset.amount;
+            });
+        });
+        
+        otherAmountBtn.addEventListener('click', () => {
+            // Reset all buttons
+            donationAmounts.forEach(b => {
+                b.classList.remove('border-primary-blue', 'bg-blue-50', 'dark:bg-gray-700');
+                b.classList.add('border-gray-300', 'dark:border-gray-600');
+            });
+            
+            // Highlight other amount button
+            otherAmountBtn.classList.remove('border-gray-300', 'dark:border-gray-600');
+            otherAmountBtn.classList.add('border-primary-blue', 'bg-blue-50', 'dark:bg-gray-700');
+            
+            // Show custom amount field
+            customAmountDiv.classList.remove('hidden');
+            otherAmountInput.focus();
+            
+            // Reset selected amount
+            selectedAmount = null;
+        });
+        
+        otherAmountInput.addEventListener('input', () => {
+            selectedAmount = otherAmountInput.value;
+        });
+        
+        // Form submissions and notifications
+        const volunteerApplicationForm = document.getElementById('volunteerApplicationForm');
+        const partnershipForm = document.getElementById('partnershipForm');
+        const donationForm = document.getElementById('donationForm');
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.getElementById('newsletterForm');
+        const notification = document.getElementById('notification');
+        const notificationIcon = document.getElementById('notification-icon');
+        const notificationTitle = document.getElementById('notification-title');
+        const notificationMessage = document.getElementById('notification-message');
+        const closeNotification = document.getElementById('close-notification');
+        
+        // Function to show notification
+        function showNotification(type, title, message) {
+            // Set icon and colors based on notification type
+            if (type === 'success') {
+                notificationIcon.className = 'flex-shrink-0 w-10 h-10 bg-green-100 text-green-500 rounded-full flex items-center justify-center mr-4';
+                notificationIcon.innerHTML = '<i class="fas fa-check"></i>';
+            } else if (type === 'error') {
+                notificationIcon.className = 'flex-shrink-0 w-10 h-10 bg-red-100 text-red-500 rounded-full flex items-center justify-center mr-4';
+                notificationIcon.innerHTML = '<i class="fas fa-exclamation"></i>';
+            } else {
+                notificationIcon.className = 'flex-shrink-0 w-10 h-10 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mr-4';
+                notificationIcon.innerHTML = '<i class="fas fa-info"></i>';
+            }
+            
+            // Set notification content
+            notificationTitle.textContent = title;
+            notificationMessage.textContent = message;
+            
+            // Show notification
+            notification.classList.remove('hidden');
+            setTimeout(() => {
+                notification.classList.remove('translate-y-20', 'opacity-0');
+            }, 100);
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+        
+        // Function to hide notification
+        function hideNotification() {
+            notification.classList.add('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 500);
+        }
+        
+        // Close notification on click
+        closeNotification.addEventListener('click', hideNotification);
+        
+        // Form submissions
+        volunteerApplicationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, you would send this data to your server
+            showNotification('success', 'Application Received', 'Thank you for your interest in volunteering! We\'ll contact you shortly.');
+            volunteerForm.classList.add('hidden');
+            volunteerApplicationForm.reset();
+            document.getElementById('get-involved').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        partnershipForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, you would send this data to your server
+            showNotification('success', 'Inquiry Received', 'Thank you for your partnership inquiry! Our team will review and reach out soon.');
+            partnerForm.classList.add('hidden');
+            partnershipForm.reset();
+            document.getElementById('get-involved').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        donationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Validate donation amount
+            if (!selectedAmount || selectedAmount <= 0) {
+                showNotification('error', 'Error', 'Please select or enter a valid donation amount.');
+                return;
+            }
+            
+            // In a real implementation, you would redirect to a payment processor
+            showNotification('success', 'Donation Initiated', 'You\'ll be redirected to our secure payment page to complete your donation.');
+            donationForm.reset();
+            // Reset donation amount selection
+            donationAmounts.forEach(b => {
+                b.classList.remove('border-primary-blue', 'bg-blue-50', 'dark:bg-gray-700');
+                b.classList.add('border-gray-300', 'dark:border-gray-600');
+            });
+            customAmountDiv.classList.add('hidden');
+            selectedAmount = null;
+        });
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, you would send this data to your server
+            showNotification('success', 'Message Sent', 'Thank you for your message! We\'ll get back to you as soon as possible.');
+            contactForm.reset();
+        });
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real implementation, you would send this data to your server
+            showNotification('success', 'Subscription Confirmed', 'You\'ve been added to our newsletter. Thank you!');
+            newsletterForm.reset();
+        });
+        
+        // Initial page load - highlight active nav item based on scroll position
+        document.addEventListener('DOMContentLoaded', () => {
+            updateActiveNavItem();
+        });
+        
+        // Update active nav item on scroll
+        window.addEventListener('scroll', () => {
+            updateActiveNavItem();
+        });
+        
+        function updateActiveNavItem() {
+            const scrollPosition = window.scrollY + 100;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            document.querySelectorAll('section[id]').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('border-primary-blue', 'border-primary-red', 'border-primary-green', 'border-primary-yellow');
+                        
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            // Add appropriate color based on section
+                            if (sectionId === 'home' || sectionId === 'blog') {
+                                link.classList.add('border-primary-blue');
+                            } else if (sectionId === 'about' || sectionId === 'contact') {
+                                link.classList.add('border-primary-red');
+                            } else if (sectionId === 'programs') {
+                                link.classList.add('border-primary-green');
+                            } else if (sectionId === 'get-involved') {
+                                link.classList.add('border-primary-yellow');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
